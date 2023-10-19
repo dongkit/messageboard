@@ -1,0 +1,46 @@
+<style>
+    body {
+        background-color: #111; /* Dark background color */
+        color: #fff; /* Light text color */
+    }
+
+    .card {
+		background-color: #222;
+		color: #fff;
+	}
+
+    .form-control {
+        background-color: #333; /* Dark input background color */
+        color: #fff; /* Light input text color */
+    }
+</style>
+
+<?php echo $this->Html->css('form'); ?>
+<?php echo $this->element('navigation'); ?>
+
+<body>
+<div class="container d-flex justify-content-center mt-5">
+    <div class="card" style="width:100vh;">
+            <h2 class="card-title text-center m-4">Update Password</h2>
+        <div class="card-body">
+            <?php if ($this->Session->check('Message.error')): ?>
+                <div class="alert alert-danger">
+                    <?php echo $this->Session->flash('error'); ?>
+                </div>
+            <?php endif;?>
+            <?php if ($this->Session->check('Message.success')): ?>
+                <div class="alert alert-success">
+                    <?php echo $this->Session->flash('success'); ?>
+                </div>
+            <?php endif;?>
+			<?php
+				echo $this->Form->create('User'); 
+				echo $this->Form->input('old_password', array('value' => '', 'type' => 'password','label' => 'Enter your current password', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control', 'div' => array('class' => 'form-group')));
+				echo $this->Form->input('password', array('value' => '', 'type' => 'password', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control', 'div' => array('class' => 'form-group')));
+				echo $this->Form->input('password_confirm', array('value' => '', 'type' => 'password', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control', 'div' => array('class' => 'form-group')));
+				echo $this->Form->submit('Update Password', array('class' => 'btn btn-secondary btn-block mt-3','style' => 'width: auto'));
+				echo $this->Form->end();
+			?>
+		</div>
+	</div>
+</div>
