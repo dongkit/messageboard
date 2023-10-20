@@ -22,7 +22,7 @@
 	}
 </style>
 
-<?php echo $this->element('navigation'); ?>
+<?php echo $this->element('navbar'); ?>
 
 <?php echo $this->Html->css('form'); ?>
 
@@ -85,7 +85,7 @@
 			label: user.User.name,
 			photo_url: user.User.photo_url 
 				? '/messageboard/' + user.User.photo_url 
-				: 'https://cdn-icons-png.flaticon.com/512/147/147142.png',
+				: 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png',
 			})
 		})
 		$("#search-receiver").autocomplete({
@@ -102,7 +102,7 @@
 			}
 		}).data('ui-autocomplete')._renderItem = function (ul, item) {
 			return $('<li>')
-				.append('<div class="d-block text-decoration-none"><img style="width: 60px; max-height: 60px; margin-right: 5px" src="' + item.photo_url + '"/><span>' + item.label + '</span></div>')
+				.append('<div class="d-block text-decoration-none"><img style="width: 60px; max-height: 60px; border-radius: 10%; margin-right: 5px" src="' + item.photo_url + '"/><span>' + item.label + '</span></div>')
 				.appendTo(ul);
 		};
 	});

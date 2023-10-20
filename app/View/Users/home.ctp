@@ -1,9 +1,10 @@
-<!-- Include your layout, navbar, or any common elements here -->
-<?php echo $this->element('navigation'); ?>
+<?php echo $this->element('navbar'); ?>
 
-<body class="text-center" style="background-color: #222; color:#fff;"><br><br><br><br><br><br><br>
-    <h1>Welcome to My Message Board</h1><br>
+<body class="text-center" style="background-color: #111; color:#fff;"><br><br>
+    <h1>WELCOME TO MESSAGE BOARD</h1><br>
+    <div class="dropdown-divider"></div>
+    <br>
     <h5>
-        This is my messageboard. You can quickly access essential actions using the quick links on the top.
+        You can quickly access essential actions using the quick links on the top.
     </h5>
 </body>

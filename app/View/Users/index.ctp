@@ -33,7 +33,7 @@
     }
 </style>
 
-<?php echo $this->element('navigation'); ?>
+<?php echo $this->element('navbar'); ?>
 
 <body>
     
@@ -41,25 +41,23 @@
     <div class="messages my-4">
         <div class="card my-4" style="width:100vh;">
                 <h2 class="card-title text-center m-4">Messages</h2>
-
+                <div class="d-flex justify-content-start mx-4 mt-5">
+                    <p></p>
+                    <?php echo $this->Html->link('New Message', array('controller' => 'messages', 'action' => 'new'), array('class' => 'btn btn-secondary btn-block', 'style' => 'width: auto;')); ?>
+                </div>
                 <div class="d-flex align-items-center m-4">
                     <input type="text" class="form-control" id="search-message" placeholder="Search..." style="background-color: #333; color: #fff;">
                 </div>
             
-                <div class="d-flex justify-content-start mx-4">
-                    <p></p>
-                    <?php echo $this->Html->link('New Message', array('controller' => 'messages', 'action' => 'new'), array('class' => 'btn btn-secondary btn-block', 'style' => 'width: auto;')); ?>
-                </div>
-
-                    <div class="message-content">
+                
                         <?php foreach($messages as $index => $message): ?>
                             <div class="card-body message-content-container" data-message-id="<?php echo $message['Message']['id'] ?>">
-                                <div class="card mx-auto" style="width: 90%;">
+                                <div class="card mx-auto" style="background-color:#333; width: 90%;">
                                     <div class="card-body row">
                                         <div class="col-md-1">
                                             <?php $photoUrl = $message['User']['photo_url'] 
                                                 ? '/messageboard/' . $message['User']['photo_url']
-                                                : 'https://cdn-icons-png.flaticon.com/512/147/147142.png' 
+                                                : 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png' 
                                             ?>
                                             <img src="<?php echo $photoUrl; ?>" alt="Profile picture" class="my-3" style="border-radius:10px; margin-right:10px; width:90px; height:90px;">
                                         </div>
@@ -84,7 +82,6 @@
                                 </div>
                             </div>
                         <?php endforeach; ?>
-                    </div>
 
                     <?php if(count($messages) >= 4): ?>
                         <div class="text-center mb-5">

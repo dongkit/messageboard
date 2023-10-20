@@ -16,7 +16,7 @@
 </style>
 
 <?php echo $this->Html->css('form'); ?>
-<?php echo $this->element('navigation'); ?>
+<?php echo $this->element('navbar'); ?>
 
 <body>
 <div class="container d-flex justify-content-center mt-5">
@@ -38,7 +38,7 @@
                 echo $this->Form->create('User'); 
                 echo $this->Form->input('email', array('readonly', 'label' => 'Current Email', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control', 'div' => array('class' => 'form-group')));
                 echo $this->Form->input('new_email', array('value' => '', 'type' => 'email', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control', 'div' => array('class' => 'form-group')));
-                echo $this->Form->submit('Update Email', array('class' => 'btn btn-secondary btn-block mt-3','style' => 'width: auto'));
+                echo $this->Form->submit('Update Email', array('class' => 'btn btn-secondary btn-block mt-4','style' => 'width: auto'));
                 echo $this->Form->end();
             ?>
         </div>

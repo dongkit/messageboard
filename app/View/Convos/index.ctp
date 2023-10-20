@@ -37,7 +37,7 @@
 	}
 </style>
 
-<?php echo $this->element('navigation'); ?>
+<?php echo $this->element('navbar'); ?>
 
 <body>
 <div class="container mt-5">
@@ -68,7 +68,7 @@
 				<?php foreach ($convos as $convo): ?>
 					<?php $photoUrl = $convo['User']['photo_url']
 						? '/messageboard/' . $convo['User']['photo_url']
-						: 'https://cdn-icons-png.flaticon.com/512/147/147142.png';
+						: 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png';
 					?>
 					<?php
 						$isConvoUserEqualToAuthUser = $convo['User']['id'] === AuthComponent::user('id') ? true : false;
@@ -214,7 +214,7 @@
 				success: function(data) {
 					if (data.length > 0) {
 						data.forEach(function(d) {
-							d.User.photo_url = d.User.photo_url ? '/messageboard/' +  d.User.photo_url : 'https://cdn-icons-png.flaticon.com/512/147/147142.png'
+							d.User.photo_url = d.User.photo_url ? '/messageboard/' +  d.User.photo_url : 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png'
 							const isConvoUserEqualToAuthUser = d.User.id === authId ? true : false;
 							var html = `
 							<div class="d-flex align-items-center p-2 ${isConvoUserEqualToAuthUser 

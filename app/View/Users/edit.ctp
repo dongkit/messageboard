@@ -38,11 +38,11 @@
     }
 </style>
 
-<?php echo $this->element('navigation'); ?>
+<?php echo $this->element('navbar'); ?>
 
 <?php
     if (empty($user['User']['photo_url'])) {
-        $photoUrl = 'https://cdn-icons-png.flaticon.com/512/147/147142.png';
+        $photoUrl = 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png';
     } else {
         $photoUrl = $this->Html->webroot($user['User']['photo_url']);
     }

@@ -22,8 +22,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		Messageboard | 
-		<?php echo $this->fetch('title'); ?>
+		Message Board
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
@@ -43,12 +42,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<!-- Bootstrap js -->
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700">
+
 </head>
-<body>
+<body style = "background-color: #222; color: #fff; margin: 0;font-family: 'Poppins', sans-serif; font-size: 90%;">
+	
 	<div id="container">
 		<div class="content">
 			<?php echo $this->fetch('content'); ?>
 		</div>
 	</div>
+	
 </body>
 </html>

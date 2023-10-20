@@ -16,7 +16,7 @@
 </style>
 
 <?php echo $this->Html->css('form'); ?>
-<?php echo $this->element('navigation'); ?>
+<?php echo $this->element('navbar'); ?>
 
 <body>
 <div class="container d-flex justify-content-center mt-5">
@@ -38,7 +38,7 @@
 				echo $this->Form->input('old_password', array('value' => '', 'type' => 'password','label' => 'Enter your current password', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control', 'div' => array('class' => 'form-group')));
 				echo $this->Form->input('password', array('value' => '', 'type' => 'password', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control', 'div' => array('class' => 'form-group')));
 				echo $this->Form->input('password_confirm', array('value' => '', 'type' => 'password', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control', 'div' => array('class' => 'form-group')));
-				echo $this->Form->submit('Update Password', array('class' => 'btn btn-secondary btn-block mt-3','style' => 'width: auto'));
+				echo $this->Form->submit('Update Password', array('class' => 'btn btn-secondary btn-block mt-4','style' => 'width: auto'));
 				echo $this->Form->end();
 			?>
 		</div>

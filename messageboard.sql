@@ -60,7 +60,7 @@ CREATE TABLE `messages` (
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
+  `name` varchar(60) NOT NULL,
   `email` varchar(60) NOT NULL,
   `password` varchar(255) NOT NULL,
   `photo_url` varchar(255) DEFAULT NULL,
