@@ -82,7 +82,7 @@
         </div>
     </div>
 </div>
-
+<?php echo $this->element('footer'); ?>
 
 
 <script>

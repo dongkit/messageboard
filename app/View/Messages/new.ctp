@@ -74,6 +74,7 @@
 	</div>
 </div>
 </body>
+<?php echo $this->element('footer'); ?>
 
 <script>
 	const users = <?php echo json_encode($users); ?>;

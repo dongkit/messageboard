@@ -94,6 +94,7 @@
     </div>
 </div>
 </body>
+<?php echo $this->element('footer'); ?>
 
 <script>
   $(document).ready(function() {

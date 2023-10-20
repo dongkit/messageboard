@@ -8,3 +8,4 @@
         You can quickly access essential actions using the quick links on the top.
     </h5>
 </body>
+<?php echo $this->element('footer'); ?>

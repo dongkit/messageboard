@@ -105,7 +105,7 @@
 	</div>
 </div>
 </body>
-
+<?php echo $this->element('footer'); ?>
 
 <script>
 	const messageData = <?php echo json_encode($messageData); ?>;
