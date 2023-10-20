@@ -36,6 +36,26 @@
     input#photo-url {
         display: none;
     }
+
+    #footer {
+        background: #111;
+        color: #fff; /* Footer text color */
+        padding: 20px 0; /* Space around footer content */
+        width: 100%; /* Full width of the viewport */
+        text-align: center; /* Center-align text */
+    }
+
+    /* Maintain space between the content and the footer */
+    .content-container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Add responsiveness for smaller screens */
+    @media (max-width: 768px) {
+        /* Add any responsive styles you need for smaller screens */
+    }
 </style>
 
 <?php echo $this->element('navbar'); ?>
@@ -48,41 +68,55 @@
     }
 ?>
 
-<div class="container d-flex justify-content-center">
-	<div class="card my-5" style="width:100vh;">
-        <h2 class="card-title text-center my-4">Update Profile</h2>
-        <?php if ($this->Session->check('Message.error')): ?>
-            <div class="alert alert-danger">
-                <?php echo $this->Session->flash('error'); ?>
-            </div>
-        <?php endif;?>
-        <?php echo $this->Form->create('User', array('type' => 'file')); ?>
-        <div class="d-flex justify-content-center align-items-center" style="width: 50%; margin: 0 auto; text-align: center;">
-            <img id="image-preview" src="<?php echo $photoUrl; ?>" style="max-height: 100%; border-radius: 15px; max-width: 150px;" class="form-group" />
-            </div>
-            <div class="d-flex justify-content-center mb-4">
-                <label for="photo-url" id="upload-label">Upload Pic</label>
-            </div>
-            <div class="px-4">
-            <?php
-                echo $this->Form->input('photo_url', array('id' => 'photo-url', 'name' => 'data[User][photo_url]', 'accept' => '.jpg, .png, .gif', 'type' => 'file'));
-                echo $this->Form->input('name', array('required', 'class' => 'form-control mb-3', 'style' => 'background-color: #333; color: #fff;', 'minlength' => 5, 'maxlength' => 20));
-                echo $this->Form->input('birthdate', array(
-                    'required',
-                    'type' => 'text',
-                    'class' => 'form-control datepicker mb-3',
-                    'style' => 'background-color: #333; color: #fff;'
-                ));
-                echo $this->Form->input('gender', array('required', 'options' => array('m' => 'Male', 'f' => 'Female'), 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control mb-3'));
-                echo $this->Form->input('hobby', array('required', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control mb-3'));
-                echo $this->Form->submit('Update', array('required', 'style' => 'background-color: #333; color: #fff;', 'class' => 'btn btn-secondary btn-block mb-4','style' => 'width: auto'));
-                echo $this->Form->end();
-            ?>
+<body>
+    <div class="container d-flex justify-content-center">
+        <div class="card my-5" style="width:100vh;">
+            <h2 class="card-title text-center my-4">Update Profile</h2>
+            <?php if ($this->Session->check('Message.error')): ?>
+                <div class="alert alert-danger">
+                    <?php echo $this->Session->flash('error'); ?>
+                </div>
+            <?php endif;?>
+
+            <div class="d-flex justify-content-center align-items-center" style="width: 50%; margin: 0 auto; text-align: center;">
+            
+            <?php echo $this->Form->create('User', array('type' => 'file')); ?>
+                <img id="image-preview" src="<?php echo $photoUrl; ?>" style="max-height: 100%; border-radius: 15px; max-width: 150px;" class="form-group" />
+                </div>
+                <div class="d-flex justify-content-center mb-4">
+                    <label for="photo-url" id="upload-label">Upload Pic</label>
+                </div>
+                <div class="px-4">
+                <?php
+                    echo $this->Form->input('photo_url', array('id' => 'photo-url', 'name' => 'data[User][photo_url]', 'accept' => '.jpg, .png, .gif', 'type' => 'file'));
+                    echo $this->Form->input('name', array('required', 'class' => 'form-control mb-3', 'style' => 'background-color: #333; color: #fff;', 'minlength' => 5, 'maxlength' => 20));
+                    echo $this->Form->input('birthdate', array(
+                        'required',
+                        'type' => 'text',
+                        'class' => 'form-control datepicker mb-3',
+                        'style' => 'background-color: #333; color: #fff;'
+                    ));
+                    echo $this->Form->input('gender', array('required', 'options' => array('m' => 'Male', 'f' => 'Female'), 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control mb-3'));
+                    echo $this->Form->input('hobby', array('required', 'style' => 'background-color: #333; color: #fff;', 'class' => 'form-control mb-3'));
+                    echo $this->Form->submit('Update', array('required', 'style' => 'background-color: #333; color: #fff;', 'class' => 'btn btn-secondary btn-block mb-4','style' => 'width: auto'));
+                    echo $this->Form->end();
+                ?>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<?php echo $this->element('footer'); ?>
+</body>
+
+<footer>
+    <div >
+        <div>
+            <div class="container d-flex justify-content-center">
+                <p>&copy; <?= date('Y'); ?> FDC | Christian Kit Tumagan</p>
+            </div>
+            <p class="container d-flex justify-content-center">All rights reserved!</p>
+        </div>
+    </div>
+</footer>
 
 
 <script>

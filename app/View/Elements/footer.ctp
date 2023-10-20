@@ -1,20 +1,17 @@
 <style>
-/* Footer Styles */
-footer {
-    background: #333; /* Background color for the footer */
-    color: #fff; /* Text color for the footer */
-    padding: 20px 0; /* Add space around footer content */
-    position: absolute; /* Position the footer absolutely */
-    bottom: 0; /* Place the footer at the bottom */
-    width: 100%; /* Full width of the viewport */
-    text-align: center; /* Center align text */
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    height: auto;
+    width: 100vw;
+    padding-top: 40px;
+    color: #fff;
 }
-
-/* Add responsiveness for smaller screens */
 @media (max-width: 768px) {
-    footer {
-        font-size: 14px; /* Adjust font size for smaller screens */
-    }
+    /* Add any responsive styles you need for smaller screens */
 }
 </style>
 
